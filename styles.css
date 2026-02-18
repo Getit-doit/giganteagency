@@ -50,7 +50,7 @@ p{margin:0 0 12px}
 .header-inner{
   display:flex; align-items:center; justify-content:space-between;
   gap:16px;
-  padding:10px 0;
+  padding:6px 0; /* tighter so bigger logo doesn't feel tall */
 }
 
 .brand{
@@ -60,8 +60,10 @@ p{margin:0 0 12px}
   text-decoration:none;
   min-width: 180px;
 }
+
+/* Larger logo */
 .logo-img{
-  height: 48px;
+  height: 72px; /* was 48px */
   width: auto;
   display:block;
 }
@@ -240,9 +242,10 @@ p{margin:0 0 12px}
 @media (max-width: 900px){
   .features{grid-template-columns: 1fr}
 }
+
 @media (max-width: 720px){
   .nav{display:none}
   .nav-toggle{display:inline-block}
   h1{font-size:38px}
-  .logo-img{height:44px}
+  .logo-img{height:60px} /* scale down on mobile */
 }
