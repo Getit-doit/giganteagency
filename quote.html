@@ -49,16 +49,11 @@
     </section>
 
     <section class="section">
-      <div class="container center-wrap">
-        <div class="surface card narrow">
-          <h2 class="card-title">Request Form</h2>
-          <p class="card-subtitle">We’ll use this to contact you about your request.</p>
+      <div class="container">
+        <div class="surface card prose" style="max-width:760px;">
+          <h2 style="margin-top:0;">Request Form</h2>
+          <p class="muted">We’ll use this to contact you about your request.</p>
 
-          <!-- GitHub Pages is static: use a form handler to email submissions.
-               Formspree quick setup:
-               1) Create a Formspree form and set recipient to info@gicanteagency.com
-               2) Replace YOUR_FORMSPREE_ID below with your actual ID
-          -->
           <form class="form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
             <input type="hidden" name="_subject" value="New Quote Request - GicanteAgency.com" />
             <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -94,13 +89,15 @@
               <textarea id="notes" name="notes" rows="4" placeholder="Anything we should know to get started?"></textarea>
             </div>
 
+            <!-- DCA-style SMS CTA block -->
             <div class="consent-box">
               <div class="consent-title">SMS Opt-In (Optional)</div>
               <p class="consent-text">
-                By checking the box below and submitting this form, you agree to receive SMS messages from
-                Gicante Agency LLC related to your request. Message types may include: appointment scheduling,
-                quote follow-ups, policy updates, billing reminders, and customer support.
-                Message frequency may vary. Message and data rates may apply. Reply STOP to opt out, HELP for help.
+                By submitting this form and checking the box below, you agree to receive SMS messages from
+                <strong>Gicante Agency LLC</strong> related to your request. Message types may include:
+                appointment scheduling, quote follow-ups, policy updates, billing reminders, and customer support.
+                <strong>Message frequency may vary.</strong> <strong>Message and data rates may apply.</strong>
+                Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help.
               </p>
               <p class="consent-text">
                 See <a href="privacy-policy.html">Privacy Policy</a> and <a href="sms-terms.html">SMS Terms</a>.
