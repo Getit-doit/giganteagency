@@ -11,11 +11,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Gicante Agency home">
-        <div class="brand-mark" aria-hidden="true"></div>
-        <div class="brand-text">
-          <div class="brand-name">Gicante Agency</div>
-          <div class="brand-tag">Insurance</div>
-        </div>
+        <img src="logo.png" alt="Gicante Agency" class="logo-img" />
       </a>
 
       <nav class="nav">
@@ -58,9 +54,10 @@
           <h2 class="card-title">Request Form</h2>
           <p class="card-subtitle">We’ll use this to contact you about your request.</p>
 
-          <!-- Formspree handler:
-               1) Create a form at Formspree and set recipient to info@gicanteagency.com
-               2) Replace YOUR_FORMSPREE_ID below with your real ID
+          <!-- GitHub Pages is static: use a form handler to email submissions.
+               Formspree quick setup:
+               1) Create a Formspree form and set recipient to info@gicanteagency.com
+               2) Replace YOUR_FORMSPREE_ID below with your actual ID
           -->
           <form class="form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
             <input type="hidden" name="_subject" value="New Quote Request - GicanteAgency.com" />
