@@ -1,31 +1,31 @@
 :root{
-  --bg: #0b1220;
-  --surface: rgba(255,255,255,.06);
-  --surface2: rgba(255,255,255,.045);
-  --line: rgba(255,255,255,.10);
-  --text: #eaf0ff;
-  --muted: rgba(234,240,255,.72);
-  --muted2: rgba(234,240,255,.60);
+  --bg:#f6f8fc;
+  --card:#ffffff;
+  --card2:#fbfcff;
+  --line:rgba(15,23,42,.10);
 
-  --primary: #2f6bff;
-  --primary2:#1c4fd7;
+  --text:#0f172a;
+  --muted:rgba(15,23,42,.68);
 
-  --radius: 18px;
-  --shadow: 0 18px 45px rgba(0,0,0,.40);
-  --max: 1040px;
+  --primary:#1f5eff;
+  --primary2:#1748c8;
+
+  --radius:18px;
+  --shadow: 0 18px 45px rgba(15,23,42,.10);
+  --max:1100px;
 }
 
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color:var(--text);
   background:
-    radial-gradient(900px 600px at 20% 0%, rgba(47,107,255,.22), transparent 60%),
-    radial-gradient(700px 500px at 85% 15%, rgba(255,255,255,.10), transparent 55%),
+    radial-gradient(900px 600px at 20% 0%, rgba(31,94,255,.10), transparent 60%),
+    radial-gradient(700px 500px at 85% 10%, rgba(15,23,42,.06), transparent 55%),
     var(--bg);
-  line-height: 1.55;
+  line-height:1.6;
 }
 
 a{color:inherit}
@@ -36,78 +36,94 @@ h1{font-size:44px; line-height:1.05; margin:0 0 12px}
 h2{font-size:24px; margin:0 0 10px}
 h3{font-size:18px; margin:0 0 10px}
 p{margin:0 0 12px}
-.lead{font-size:18px; color:var(--muted); max-width:64ch}
-
-.small{font-size:13px; color:var(--muted2)}
+.lead{font-size:18px; color:var(--muted); max-width:70ch}
+.small{font-size:13px; color:var(--muted)}
 .muted{color:var(--muted)}
 
+.surface{
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, var(--card), var(--card2));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card{padding:22px}
+
+/* Header */
 .site-header{
   position:sticky; top:0; z-index:10;
-  background: rgba(11,18,32,.70);
+  background: rgba(246,248,252,.82);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
+
 .header-inner{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:16px;
-  padding:6px 0; /* tighter so bigger logo doesn't feel tall */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:6px 0; /* tighter to support big logo */
 }
 
 .brand{
   display:flex;
   align-items:center;
-  gap:12px;
   text-decoration:none;
-  min-width: 180px;
+  min-width: 200px;
 }
 
-/* Larger logo */
+/* 3x bigger feel (relative to typical 48px) */
 .logo-img{
-  height: 72px; /* was 48px */
-  width: auto;
+  height: 150px;
+  width:auto;
   display:block;
 }
 
-.nav{display:flex; gap:16px; align-items:center}
+/* Nav */
+.nav{display:flex; gap:14px; align-items:center}
 .nav a{
   text-decoration:none;
-  font-weight:700;
-  color: var(--muted);
-  padding:10px 10px;
+  font-weight:800;
+  color: rgba(15,23,42,.72);
+  padding:10px 12px;
   border-radius:12px;
 }
 .nav a:hover, .nav a.active{
   color: var(--text);
-  background: rgba(255,255,255,.05);
+  background: rgba(15,23,42,.05);
 }
 
+/* Buttons */
 .header-cta{display:flex; gap:10px; align-items:center}
-
 .btn{
-  display:inline-flex; align-items:center; justify-content:center;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   text-decoration:none;
   font-weight:900;
-  border-radius: 999px;
+  border-radius:999px;
   padding:11px 16px;
   border:1px solid var(--line);
-  background: rgba(255,255,255,.03);
+  background: rgba(15,23,42,.03);
   transition: transform .06s ease, background .12s ease, border-color .12s ease;
 }
 .btn:hover{transform: translateY(-1px)}
 .btn:active{transform: translateY(0)}
 .btn-primary{
   background: linear-gradient(135deg, var(--primary), var(--primary2));
-  border-color: rgba(47,107,255,.55);
+  border-color: rgba(31,94,255,.45);
+  color:#fff;
 }
-.btn-ghost{background: rgba(255,255,255,.04)}
+.btn-ghost{background: rgba(15,23,42,.04)}
 .btn-lg{padding:13px 18px; font-size:15px}
 
+/* Mobile menu */
 .nav-toggle{
   display:none;
   width:44px; height:44px;
   border-radius:14px;
   border:1px solid var(--line);
-  background: rgba(255,255,255,.04);
+  background: rgba(15,23,42,.04);
   cursor:pointer;
 }
 .nav-toggle span{
@@ -115,10 +131,9 @@ p{margin:0 0 12px}
   background: var(--text);
   margin:4px auto; border-radius:2px;
 }
-
 .mobile-nav{
   border-top: 1px solid var(--line);
-  background: rgba(11,18,32,.88);
+  background: rgba(246,248,252,.92);
 }
 .mobile-nav-inner{
   padding:12px 0 16px;
@@ -129,52 +144,34 @@ p{margin:0 0 12px}
   text-decoration:none;
   padding:12px 12px;
   border-radius:14px;
-  background: rgba(255,255,255,.04);
+  background: rgba(15,23,42,.03);
   border:1px solid var(--line);
   font-weight:800;
 }
 .mobile-nav a.active{
-  background: rgba(47,107,255,.14);
-  border-color: rgba(47,107,255,.32);
+  background: rgba(31,94,255,.10);
+  border-color: rgba(31,94,255,.22);
 }
 
-.section{padding:54px 0}
-.section-tight{padding:34px 0}
+/* Sections */
+.hero{padding:56px 0 24px}
+.section{padding:52px 0}
+.section-tight{padding:30px 0}
+.page-hero{padding:40px 0 10px}
+.page-hero h1{font-size:34px; margin:0 0 10px}
 
-.hero{padding:66px 0 28px}
-
-.surface{
-  border:1px solid var(--line);
-  background: linear-gradient(180deg, var(--surface), var(--surface2));
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.card{padding:20px}
-.card-title{margin:0 0 6px; font-size:20px}
-.card-subtitle{margin:0 0 14px; color:var(--muted)}
-.card-note{
-  margin-top:12px;
-  font-size:12.5px;
-  color: var(--muted2);
-}
-
+/* Features */
 .features{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap:12px;
-  margin-top:18px;
+  margin-top:16px;
 }
 .feature{padding:16px}
 .feature-title{font-weight:900; margin-bottom:6px}
 .feature-desc{color:var(--muted); font-size:13.5px}
 
-.center-wrap{display:flex; justify-content:center}
-.narrow{width:100%; max-width: 640px}
-
-.page-hero{padding:44px 0 10px}
-.page-hero h1{font-size:34px; margin:0 0 10px}
-
+/* Form */
 .form{display:grid; gap:12px; margin-top:6px}
 .field label{display:block; font-weight:900; margin-bottom:6px}
 .field input, .field select, .field textarea{
@@ -182,19 +179,19 @@ p{margin:0 0 12px}
   padding:12px 12px;
   border-radius:14px;
   border:1px solid var(--line);
-  background: rgba(11,18,32,.35);
+  background: #fff;
   color: var(--text);
   outline:none;
 }
 .field input:focus, .field select:focus, .field textarea:focus{
-  border-color: rgba(47,107,255,.55);
-  box-shadow: 0 0 0 4px rgba(47,107,255,.12);
+  border-color: rgba(31,94,255,.55);
+  box-shadow: 0 0 0 4px rgba(31,94,255,.12);
 }
 
 .consent-box{
   border:1px solid var(--line);
-  background: rgba(255,255,255,.04);
-  border-radius: 14px;
+  background: rgba(15,23,42,.02);
+  border-radius:14px;
   padding:14px;
 }
 .consent-title{font-weight:900; margin-bottom:8px}
@@ -204,10 +201,11 @@ p{margin:0 0 12px}
 
 .hp{display:none !important}
 
+/* Footer */
 .site-footer{
   border-top:1px solid var(--line);
   padding:26px 0;
-  background: rgba(11,18,32,.72);
+  background: rgba(255,255,255,.70);
 }
 .footer-inner{
   display:flex;
@@ -222,30 +220,31 @@ p{margin:0 0 12px}
   gap:12px;
 }
 .footer-links a{
-  color: var(--muted);
+  color: rgba(15,23,42,.72);
   text-decoration:none;
-  font-weight:800;
+  font-weight:900;
 }
 .footer-links a:hover{color:var(--text)}
 .disclaimer{
   max-width: 80ch;
-  color: var(--muted2);
+  color: rgba(15,23,42,.60);
   font-size:12.5px;
   margin-top:8px;
 }
 
-.prose{max-width: 860px}
+/* Prose */
+.prose{max-width: 880px}
 .prose h2{margin-top:22px}
-.prose p, .prose li{color: var(--muted)}
-.prose strong{color: var(--text)}
+.prose p, .prose li{color:rgba(15,23,42,.78)}
+.prose strong{color:var(--text)}
 
+/* Responsive */
 @media (max-width: 900px){
   .features{grid-template-columns: 1fr}
 }
-
 @media (max-width: 720px){
   .nav{display:none}
   .nav-toggle{display:inline-block}
   h1{font-size:38px}
-  .logo-img{height:60px} /* scale down on mobile */
+  .logo-img{height:110px} /* large but not ridiculous on mobile */
 }
