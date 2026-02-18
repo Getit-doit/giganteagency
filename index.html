@@ -6,7 +6,97 @@
   <title>Gicante Agency | Insurance Quotes</title>
   <meta name="description" content="Gicante Agency helps with Auto, Home, Life, and Business insurance. Request a quote online or call (817) 856-0608." />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Hero upgrade (contained so you don't have to touch styles.css) */
+    .hero-visual {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-visual::before{
+      content:"";
+      position:absolute;
+      inset:-120px -120px auto auto;
+      width:480px;
+      height:480px;
+      background: radial-gradient(circle at 30% 30%, rgba(47,107,255,.35), rgba(47,107,255,0) 65%);
+      filter: blur(0px);
+      pointer-events:none;
+    }
+    .hero-visual::after{
+      content:"";
+      position:absolute;
+      inset:auto auto -140px -140px;
+      width:520px;
+      height:520px;
+      background: radial-gradient(circle at 70% 60%, rgba(255,255,255,.14), rgba(255,255,255,0) 62%);
+      pointer-events:none;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .hero-right{
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .hero-illustration{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+      min-height: 250px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:14px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-weight:800;
+      font-size:12.5px;
+    }
+    .badge .dot{
+      width:8px;height:8px;border-radius:50%;
+      background: rgba(47,107,255,.9);
+      box-shadow: 0 0 0 4px rgba(47,107,255,.15);
+    }
+    .hero-mini{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      padding:16px;
+    }
+    .hero-mini strong{display:block; font-size:13px; letter-spacing:-.01em}
+    .hero-mini span{display:block; margin-top:4px; font-size:12.5px; color: var(--muted)}
+    .hero-mini .row{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+    }
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns: 1fr;}
+      .hero-illustration{min-height: 210px;}
+    }
+  </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -45,19 +135,90 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-inner">
+    <section class="hero hero-visual">
+      <div class="container hero-grid">
+        <!-- Left: Copy -->
         <div>
-          <h1>Insurance made simple.</h1>
+          <h1>Insurance that feels straightforward.</h1>
           <p class="lead">
-            Tell us what you’re looking for and we’ll follow up with next steps. Start online or call anytime.
+            Start a quote request in minutes. We’ll follow up to confirm details and walk you through next steps.
           </p>
+
           <div class="hero-actions">
             <a class="btn btn-primary btn-lg" href="quote.html">Get a Quote</a>
             <a class="btn btn-ghost btn-lg" href="tel:+18178560608">Call (817) 856-0608</a>
           </div>
+
+          <div class="hero-badges" aria-label="Highlights">
+            <div class="badge"><span class="dot" aria-hidden="true"></span>Fast follow-up</div>
+            <div class="badge"><span class="dot" aria-hidden="true"></span>Simple request form</div>
+            <div class="badge"><span class="dot" aria-hidden="true"></span>Auto • Home • Life • Business</div>
+          </div>
         </div>
 
+        <!-- Right: Visual + mini card -->
+        <div class="hero-right">
+          <div class="hero-illustration" aria-label="Illustration">
+            <!-- Inline SVG (no external assets) -->
+            <svg viewBox="0 0 640 360" width="100%" height="100%" role="img" aria-label="Abstract agency illustration">
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="rgba(47,107,255,0.85)"/>
+                  <stop offset="1" stop-color="rgba(255,255,255,0.18)"/>
+                </linearGradient>
+                <linearGradient id="g2" x1="1" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="rgba(255,255,255,0.20)"/>
+                  <stop offset="1" stop-color="rgba(47,107,255,0.18)"/>
+                </linearGradient>
+              </defs>
+
+              <rect x="0" y="0" width="640" height="360" rx="26" fill="rgba(255,255,255,0.03)"/>
+              <circle cx="500" cy="90" r="110" fill="url(#g1)" opacity="0.9"/>
+              <circle cx="210" cy="250" r="130" fill="url(#g2)" opacity="0.75"/>
+
+              <!-- “policy cards” -->
+              <g opacity="0.95">
+                <rect x="70" y="70" width="240" height="90" rx="18" fill="rgba(11,18,32,0.35)" stroke="rgba(255,255,255,0.12)"/>
+                <rect x="100" y="95" width="110" height="12" rx="6" fill="rgba(234,240,255,0.80)"/>
+                <rect x="100" y="118" width="170" height="10" rx="5" fill="rgba(234,240,255,0.45)"/>
+                <rect x="100" y="138" width="140" height="10" rx="5" fill="rgba(234,240,255,0.35)"/>
+              </g>
+
+              <g opacity="0.95">
+                <rect x="330" y="190" width="250" height="100" rx="18" fill="rgba(11,18,32,0.35)" stroke="rgba(255,255,255,0.12)"/>
+                <rect x="360" y="215" width="130" height="12" rx="6" fill="rgba(234,240,255,0.80)"/>
+                <rect x="360" y="240" width="180" height="10" rx="5" fill="rgba(234,240,255,0.45)"/>
+                <rect x="360" y="260" width="150" height="10" rx="5" fill="rgba(234,240,255,0.35)"/>
+              </g>
+
+              <!-- small accent line -->
+              <path d="M70 305 C180 285, 260 330, 360 310 C470 288, 520 325, 580 305"
+                    fill="none" stroke="rgba(47,107,255,0.55)" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="hero-mini">
+            <div class="row">
+              <div>
+                <strong>Contact</strong>
+                <span>
+                  <a href="mailto:info@gicanteagency.com">info@gicanteagency.com</a><br/>
+                  <a href="tel:+18178560608">(817) 856-0608</a>
+                </span>
+              </div>
+              <a class="btn btn-primary" href="quote.html">Start</a>
+            </div>
+            <div class="small" style="margin-top:10px;">
+              By contacting us, you may receive calls or texts about your request. See our
+              <a href="privacy-policy.html">Privacy Policy</a> and <a href="sms-terms.html">SMS Terms</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
         <div class="features">
           <div class="surface feature">
             <div class="feature-title">Auto</div>
@@ -71,28 +232,6 @@
             <div class="feature-title">Life</div>
             <div class="feature-desc">Help choosing protection for your family.</div>
           </div>
-        </div>
-
-        <div class="surface card">
-          <h2 class="card-title">Start a request</h2>
-          <p class="card-subtitle">A short form—no account required.</p>
-          <a class="btn btn-primary" href="quote.html">Go to Quote Form</a>
-          <div class="card-note">
-            By contacting us, you may receive calls or texts about your request. See our
-            <a href="privacy-policy.html">Privacy Policy</a> and <a href="sms-terms.html">SMS Terms</a>.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-tight">
-      <div class="container">
-        <div class="surface card">
-          <h2 class="card-title">Prefer email?</h2>
-          <p class="card-subtitle">
-            Send a note and we’ll respond as soon as possible.
-          </p>
-          <a class="btn btn-ghost" href="mailto:info@gicanteagency.com">info@gicanteagency.com</a>
         </div>
       </div>
     </section>
