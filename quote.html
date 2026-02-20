@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Request a Quote | Gicante Agency</title>
-  <meta name="description" content="Request an insurance quote from Gicante Agency. Submit your contact info and we’ll follow up." />
+  <meta name="description" content="Request an insurance quote from Gicante Agency. Submit your info and we’ll follow up." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -44,84 +44,28 @@
     <section class="page-hero">
       <div class="container">
         <h1>Request a Quote</h1>
-        <p class="lead">Submit your information and our team will contact you to review coverage options.</p>
+        <p class="lead">
+          Complete the form below and our team will follow up to review next steps.
+        </p>
+        <p class="small">
+          By submitting this form, you may receive calls or texts about your request. See our
+          <a href="privacy-policy.html">Privacy Policy</a> and <a href="sms-terms.html">SMS Terms</a>.
+        </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="surface card prose" style="max-width:780px;">
-          <h2 style="margin-top:0;">Request Form</h2>
-          <p class="muted">We’ll use this to contact you about your request.</p>
+        <div class="surface card" style="max-width:920px; margin:0 auto;">
+          <!-- JotForm Embed -->
+          <script src="https://form.jotform.com/jsform/260505119184049"></script>
+        </div>
 
-          <form class="form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-            <input type="hidden" name="_subject" value="New Quote Request - GicanteAgency.com" />
-            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-
-            <div class="field">
-              <label for="name">Full Name</label>
-              <input id="name" name="name" type="text" placeholder="Jane Doe" required />
-            </div>
-
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="jane@email.com" required />
-            </div>
-
-            <div class="field">
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" placeholder="(817) 555-1234" required />
-            </div>
-
-            <div class="field">
-              <label for="interest">What are you looking for?</label>
-              <select id="interest" name="interest">
-                <option value="Auto">Auto</option>
-                <option value="Home">Home</option>
-                <option value="Life">Life</option>
-                <option value="Commercial">Commercial</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="notes">Notes (optional)</label>
-              <textarea id="notes" name="notes" rows="4" placeholder="Anything we should know to get started?"></textarea>
-            </div>
-
-            <div class="consent-box">
-              <div class="consent-title">SMS Consent (Optional)</div>
-              <p class="consent-text">
-                By submitting this form and checking the box below, you agree to receive text messages from
-                <strong>Gicante Enterprises LLC</strong> regarding your request. Message types may include appointment scheduling,
-                follow-up questions, and customer support. <strong>Message frequency may vary.</strong>
-                <strong>Message and data rates may apply.</strong> Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help.
-              </p>
-              <p class="consent-text">
-                See <a href="privacy-policy.html">Privacy Policy</a> and <a href="sms-terms.html">SMS Terms</a>.
-              </p>
-
-              <label class="check">
-                <input type="checkbox" name="sms_opt_in" value="Yes" />
-                <span>I agree to receive SMS messages from Gicante Enterprises LLC.</span>
-              </label>
-            </div>
-
-            <div class="consent-box">
-              <div class="consent-title">Call/Email Follow-Up</div>
-              <p class="consent-text">
-                By submitting, you authorize Gicante Enterprises LLC to contact you at the phone number and email provided regarding your request.
-                Consent is not a condition of purchase.
-              </p>
-            </div>
-
-            <button class="btn btn-primary btn-lg" type="submit">Submit Request</button>
-
-            <p class="small" style="margin-top:10px;">
-              Prefer to reach out directly? Call <a href="tel:+18178560608">(817) 856-0608</a> or email
-              <a href="mailto:info@gicanteagency.com">info@gicanteagency.com</a>.
-            </p>
-          </form>
+        <div class="small" style="max-width:920px; margin:14px auto 0;">
+          Need help? Email <a href="mailto:info@gicanteagency.com">info@gicanteagency.com</a> or call
+          <a href="tel:+18178560608">(817) 856-0608</a>.
+          <br />
+          Legal: Gicante Enterprises LLC.
         </div>
       </div>
     </section>
@@ -139,9 +83,10 @@
       </div>
 
       <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="help.html">Contact</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="sms-terms.html">SMS Terms</a>
-        <a href="help.html">Contact</a>
       </div>
 
       <div class="small">© <span id="year"></span> Gicante Enterprises LLC</div>
