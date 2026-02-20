@@ -1,3 +1,7 @@
+/* ===========================
+   Gicante Agency — Light + Cozy (Ortiz-style)
+   =========================== */
+
 :root{
   --bg:#f7f8fc;
   --card:#ffffff;
@@ -62,7 +66,7 @@ p{margin:0 0 12px}
   align-items:center;
   justify-content:space-between;
   gap:18px;
-  padding:10px 0; /* cozier spacing */
+  padding:10px 0;
 }
 
 .brand{
@@ -192,7 +196,7 @@ p{margin:0 0 12px}
 .features{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap:18px;               /* more space between boxes */
+  gap:18px;
   margin-top:18px;
 }
 .feature{padding:18px}
